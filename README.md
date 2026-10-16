@@ -1,2 +1,3 @@
-# adamjanickiwriting.github.io
-Adam Janicki Writing homepage
+# Adam Janicki Writing
+
+Adam Janicki Writing Homepage

@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  transition: all 0.25s ease-in-out;
+  top: 0;
+  z-index: 10;
+  padding: 20px var(--nav-padding);
+  color: white;
+}
+
+.nav-scrolled {
+  background-color: white;
+  box-shadow: 0px 6px 22px 1px rgba(0, 0, 0, 0.1);
+  padding: 12px var(--nav-padding);
+  color: black;
+}

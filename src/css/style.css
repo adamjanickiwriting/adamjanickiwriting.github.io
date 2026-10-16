@@ -1,0 +1,37 @@
+:root {
+  --nav-padding: 80px;
+  --accent: var(--aui-link-color);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+section {
+  padding: var(--nav-padding) var(--nav-padding) 0 var(--nav-padding);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.page-title-text {
+  font-size: calc(28px + 1vw);
+}
+
+.bordering {
+  border: 2px solid red;
+}
+
+.blur {
+  backdrop-filter: blur(4px);
+}
