@@ -1,0 +1,10 @@
+.home {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 2rem;
+  background-image: url("../img/background.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
