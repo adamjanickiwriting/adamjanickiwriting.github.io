@@ -2,39 +2,18 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
   width: 100%;
+  transition: all 0.25s ease-in-out;
   top: 0;
-  box-shadow:
-    0px 1px 0px rgba(0, 0, 0, 0.04),
-    0px 6px 16px rgba(0, 0, 0, 0.08);
-  z-index: 1000;
+  z-index: 10;
+  padding: 20px var(--nav-padding);
+  color: white;
+}
+
+.nav-scrolled {
   background-color: white;
-}
-
-.nav-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.navlink-container {
-  align-items: center;
-  padding: 16px;
-  gap: 32px;
-}
-
-@media only screen and (max-width: 820px) {
-  .bar-container {
-    width: 100%;
-  }
-  nav {
-    flex-direction: column;
-  }
-  .navlink-container {
-    flex-direction: column;
-    width: 100%;
-    padding: 16px 0;
-    gap: 16px;
-  }
+  box-shadow: 0px 6px 22px 1px rgba(0, 0, 0, 0.1);
+  padding: 12px var(--nav-padding);
+  color: black;
 }

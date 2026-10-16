@@ -1,17 +1,20 @@
-import { Route, Router, Routes } from "@adamjanicki/ui";
+import { ui, useScrollToHash } from "@adamjanicki/ui";
+import Books from "src/components/Books";
 import Footer from "src/components/Footer";
+import Home from "src/components/Home";
 import Nav from "src/components/Nav";
-import Home from "src/pages/Home";
-import NotFound from "src/pages/NotFound";
 
 export default function App() {
+  useScrollToHash();
+
   return (
-    <Router>
+    <>
       <Nav />
-      <Routes fallback={<NotFound />}>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <ui.main>
+        <Home />
+        <Books />
+      </ui.main>
       <Footer />
-    </Router>
+    </>
   );
 }
