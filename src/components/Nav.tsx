@@ -1,9 +1,9 @@
 import "src/components/nav.css";
 
-import { Box, Link, ui, UnstyledLink, useScroll } from "@adamjanicki/ui";
+import { Box, Icon, Link, ui, UnstyledLink, useScroll } from "@adamjanicki/ui";
 import { TripleSpin as Hamburger } from "@adamjanicki/ui/components/Hamburger";
+import { architect } from "@adamjanicki/ui/icons";
 import { useState } from "react";
-import Logo from "src/img/logo.svg?react";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -20,7 +20,7 @@ export default function Nav() {
           to="#home"
           aria-label="Home"
         >
-          <Logo width="40px" height="40px" />
+          <Icon icon={architect} size="l" />
         </UnstyledLink>
         <Box className="mobile">
           <Hamburger
