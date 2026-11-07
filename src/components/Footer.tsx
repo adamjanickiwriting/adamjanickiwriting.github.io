@@ -7,6 +7,7 @@ export default function Footer() {
         axis: "x",
         align: "center",
         justify: "center",
+        marginTop: "xxl",
         paddingY: "xxl",
         borderTop: true,
       }}

@@ -1,6 +1,14 @@
 import "src/components/nav.css";
 
-import { Box, Icon, Link, ui, UnstyledLink, useScroll } from "@adamjanicki/ui";
+import {
+  Box,
+  Icon,
+  Link,
+  ui,
+  UnstyledLink,
+  useLocation,
+  useScroll,
+} from "@adamjanicki/ui";
 import { TripleSpin as Hamburger } from "@adamjanicki/ui/components/Hamburger";
 import { architect } from "@adamjanicki/ui/icons";
 import { useState } from "react";
@@ -8,16 +16,21 @@ import { useState } from "react";
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const { scrollY } = useScroll();
+  const { pathname } = useLocation();
 
   return (
-    <ui.nav className={scrollY >= 120 || open ? "nav-scrolled" : undefined}>
+    <ui.nav
+      className={
+        scrollY >= 120 || open || pathname !== "/" ? "nav-scrolled" : undefined
+      }
+    >
       <Box
         vfx={{ axis: "x", align: "center", justify: "between" }}
         className="bar-container"
       >
         <UnstyledLink
           vfx={{ axis: "x", align: "center" }}
-          to="#home"
+          to="/#home"
           aria-label="Home"
         >
           <Icon icon={architect} size="l" />
@@ -41,7 +54,7 @@ export default function Nav() {
           <Link
             key={title}
             vfx={{ width: "full", color: "inherit", radius: "subtle" }}
-            to={`#${title.toLowerCase()}`}
+            to={`/#${title.toLowerCase()}`}
             onClick={() => setOpen(false)}
             className="blur"
           >
