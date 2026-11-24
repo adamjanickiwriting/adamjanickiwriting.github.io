@@ -12,7 +12,7 @@ export default function Footer() {
         borderTop: true,
       }}
     >
-      <ui.p vfx={{ fontWeight: 5 }}>© 2026 Adam Janicki</ui.p>
+      <ui.p vfx={{ fontWeight: 5, margin: "none" }}>© 2026 Adam Janicki</ui.p>
     </ui.footer>
   );
 }

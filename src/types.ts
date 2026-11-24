@@ -1,12 +1,15 @@
 /// <reference types="vite/client" />
-/// <reference types="vite-plugin-svgr/client" />
 
 export type Children = React.ReactNode | React.ReactNode[];
 
 export type Book = {
   title: string;
+  slug: string;
   published: string;
   description: string;
-  slug: string;
-  Component: () => React.ReactNode;
+  genre: string;
+  tagline: string;
+  coverImage: string;
+  statusMessage: string;
+  article: string;
 };

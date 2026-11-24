@@ -17,12 +17,19 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const { scrollY } = useScroll();
   const { pathname } = useLocation();
+  const elevated = scrollY >= 120 || open || pathname !== "/";
 
   return (
     <ui.nav
-      className={
-        scrollY >= 120 || open || pathname !== "/" ? "nav-scrolled" : undefined
-      }
+      className={elevated ? "nav-scrolled" : undefined}
+      vfx={{
+        pos: "fixed",
+        width: "full",
+        z: "nav",
+        backgroundColor: elevated ? "default" : undefined,
+        color: elevated ? "default" : undefined,
+        shadow: elevated ? "subtle" : undefined,
+      }}
     >
       <Box
         vfx={{ axis: "x", align: "center", justify: "between" }}
@@ -50,11 +57,14 @@ export default function Nav() {
         className="desktop navlink-container"
         style={open ? { display: "flex" } : undefined}
       >
-        {(["Home", "Books"] as const).map((title) => (
+        {[
+          { title: "Home", to: "/#home" },
+          { title: "Books", to: "/#books" },
+        ].map(({ title, to }) => (
           <Link
             key={title}
             vfx={{ width: "full", color: "inherit", radius: "subtle" }}
-            to={`/#${title.toLowerCase()}`}
+            to={to}
             onClick={() => setOpen(false)}
             className="blur"
           >

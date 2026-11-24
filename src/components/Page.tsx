@@ -1,4 +1,4 @@
-import { ui } from "@adamjanicki/ui";
+import { ui, useScrollToHash } from "@adamjanicki/ui";
 import Box, { type BoxProps } from "@adamjanicki/ui/components/Box/Box";
 import { classNames } from "@adamjanicki/ui/functions";
 import { useEffect } from "react";
@@ -22,6 +22,8 @@ export default function Page({
   style,
   ...rest
 }: Props) {
+  useScrollToHash({ behavior: "smooth" });
+
   useEffect(() => {
     const pageTitle = documentTitle ?? title;
     if (pageTitle) {

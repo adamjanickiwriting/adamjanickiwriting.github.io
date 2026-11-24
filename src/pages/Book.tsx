@@ -1,11 +1,17 @@
-import { Box, ui } from "@adamjanicki/ui";
+import { Alert, Box, ui } from "@adamjanicki/ui";
+import Markdown from "src/components/Markdown";
 import Page from "src/components/Page";
+import type { Book as BookConfig } from "src/types";
 
-export default function Centauri2() {
+type Props = {
+  book: BookConfig;
+};
+
+export default function Book({ book }: Props) {
   return (
     <Page
-      title="Centauri-2"
-      documentTitle="Centauri-2 | Adam Janicki Writing"
+      title={book.title}
+      documentTitle={`${book.title} | Adam Janicki Writing`}
       vfx={{ paddingTop: "xxl", gap: "l" }}
     >
       <Box
@@ -17,13 +23,14 @@ export default function Centauri2() {
           gap: "xxl",
           width: "full",
           paddingX: "l",
+          marginX: "auto",
         }}
-        style={{ maxWidth: 1100, margin: "0 auto" }}
+        style={{ maxWidth: 1100 }}
       >
         <Box style={{ flex: "1 1 240px", maxWidth: 360 }}>
           <ui.img
-            src="/images/covers/centauri-2.webp"
-            alt="Centauri-2 by Adam Janicki: two stars glow above a deep blue starfield."
+            src={book.coverImage}
+            alt=""
             vfx={{ width: "full", radius: "rounded", shadow: "floating" }}
           />
         </Box>
@@ -32,28 +39,24 @@ export default function Centauri2() {
           style={{ flex: "1 1 300px", maxWidth: 560 }}
         >
           <ui.p vfx={{ fontSize: "xs", fontWeight: 8, color: "muted" }}>
-            A SCI-FI THRILLER
+            {book.genre.toUpperCase()}
           </ui.p>
           <ui.h2 vfx={{ fontSize: "xxl", margin: "none" }}>
-            A new home is 4.37 light-years away.
+            {book.tagline}
           </ui.h2>
           <ui.p vfx={{ fontSize: "m", color: "muted" }}>
-            My first novel: a dystopian sci-fi thriller set on a spaceship in
-            the 22nd century bound for the Alpha Centauri system.
+            {book.description}
           </ui.p>
-          <ui.p
-            vfx={{
-              padding: "s",
-              borderLeft: true,
-              borderColor: "primary",
-              backgroundColor: "muted",
-              radius: "subtle",
-              fontWeight: 6,
-            }}
-          >
-            More details coming soon
-          </ui.p>
+          <Alert type="info" vfx={{ fontWeight: 6 }}>
+            {book.statusMessage}
+          </Alert>
         </Box>
+      </Box>
+      <Box
+        vfx={{ width: "full", paddingX: "l", marginX: "auto" }}
+        style={{ maxWidth: 820 }}
+      >
+        <Markdown>{book.article}</Markdown>
       </Box>
     </Page>
   );

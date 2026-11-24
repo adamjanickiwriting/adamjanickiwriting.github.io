@@ -1,11 +1,13 @@
 import "src/pages/home.css";
 
-import { Box, ui, UnstyledLink } from "@adamjanicki/ui";
+import { Box, ui, UnstyledLink, useScrollToHash } from "@adamjanicki/ui";
 import { useEffect } from "react";
 import { books } from "src/books";
 import Section from "src/components/Section";
 
 export default function Home() {
+  useScrollToHash({ behavior: "smooth" });
+
   useEffect(() => {
     document.title = "Adam Janicki Writing";
   }, []);
@@ -36,8 +38,15 @@ export default function Home() {
         description="Some stories I have penned."
       >
         <Box
-          vfx={{ axis: "x", wrap: true, justify: "center", gap: "l" }}
-          style={{ maxWidth: 1100, margin: "2rem auto 0" }}
+          vfx={{
+            axis: "x",
+            wrap: true,
+            justify: "center",
+            gap: "l",
+            marginX: "auto",
+            marginTop: "xxl",
+          }}
+          style={{ maxWidth: 1100 }}
         >
           {books.map((book) => (
             <UnstyledLink
@@ -54,8 +63,8 @@ export default function Home() {
               }}
             >
               <ui.img
-                src={`/images/covers/${book.slug}.webp`}
-                alt={`Cover of ${book.title} by Adam Janicki`}
+                src={book.coverImage}
+                alt=""
                 vfx={{ radius: "rounded", border: true, shadow: "subtle" }}
                 style={{ maxHeight: 340 }}
               />

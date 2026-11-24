@@ -1,0 +1,68 @@
+:root {
+  --markdown-highlight: #55eeff;
+}
+
+.markdown-body {
+  font-size: 18px;
+  line-height: 1.8;
+  overflow-wrap: break-word;
+}
+
+.markdown-body mark {
+  background-color: var(--markdown-highlight);
+}
+
+.markdown-inline-code {
+  color: darkred;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.markdown-anchor {
+  margin-left: -32px;
+  opacity: 0;
+  padding: 8px;
+  position: absolute;
+}
+
+.markdown-anchor:focus {
+  opacity: 1;
+}
+
+.markdown-rule {
+  background-color: #ccc;
+  border: 0;
+  height: 3px;
+}
+
+.markdown-table-wrap {
+  display: block;
+}
+
+.markdown-table-wrap table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.markdown-table-row {
+  width: 100%;
+}
+
+.markdown-table-row:last-child {
+  border-bottom: 0;
+}
+
+.markdown-table-row > * {
+  flex: 1;
+}
+
+.markdown-code-scroll {
+  max-height: 70vh;
+}
+
+@media (hover: hover) {
+  .markdown-anchor-wrapper:hover > .markdown-anchor {
+    opacity: 1;
+  }
+}
