@@ -54,33 +54,36 @@ export default function Home() {
               key={book.slug}
               vfx={{
                 axis: "y",
-                gap: "s",
                 width: "min",
-                padding: "m",
-                border: true,
                 radius: "rounded",
+                overflow: "hidden",
+                backgroundColor: "default",
+                color: "inherit",
                 shadow: "subtle",
+                hover: "shade",
               }}
+              style={{ width: 260 }}
             >
               <ui.img
                 src={book.coverImage}
-                alt=""
-                vfx={{ radius: "rounded", border: true, shadow: "subtle" }}
-                style={{ maxHeight: 340 }}
+                alt={`Cover of ${book.title} by Adam Janicki`}
+                vfx={{ width: "full" }}
               />
-              <ui.h3 vfx={{ margin: "none", fontSize: "l" }}>
-                {book.title}
-              </ui.h3>
-              <ui.p
-                vfx={{
-                  margin: "none",
-                  color: "muted",
-                  fontSize: "s",
-                  fontWeight: 5,
-                }}
-              >
-                {book.description}
-              </ui.p>
+              <Box vfx={{ axis: "y", gap: "xs", padding: "m" }}>
+                <ui.h3 vfx={{ margin: "none", fontSize: "l" }}>
+                  {book.title}
+                </ui.h3>
+                <ui.p
+                  vfx={{
+                    margin: "none",
+                    color: "muted",
+                    fontSize: "s",
+                    fontWeight: 5,
+                  }}
+                >
+                  {book.description}
+                </ui.p>
+              </Box>
             </UnstyledLink>
           ))}
         </Box>

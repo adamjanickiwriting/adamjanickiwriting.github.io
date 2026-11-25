@@ -48,7 +48,11 @@ export default function Page({
           {...headerProps}
           vfx={{ textAlign: "center", ...headerProps?.vfx }}
           className={classNames("page-title-text", headerProps?.className)}
-          style={{ whiteSpace: "wrap", wordBreak: "break-word" }}
+          style={{
+            whiteSpace: "wrap",
+            wordBreak: "break-word",
+            ...headerProps?.style,
+          }}
         >
           {title}
         </ui.h1>

@@ -11,5 +11,10 @@ export type Book = {
   tagline: string;
   coverImage: string;
   statusMessage: string;
+  wordCount: number;
+  paperbackPageCount: number;
+  chapters: number;
+  amazonUrl: string;
+  paperbackPrice: number;
   article: string;
 };
